@@ -14,7 +14,10 @@ function Square({onClick, value}) {
     // this JSX is rendering a button component
     // by passing props className and onClick
   return (
-    <button className="square" onClick={onClick}>
+    <button className="square" onClick={() => {
+      alert('hello')
+      onClick()
+    }}>
       {value}
     </button>
   );
