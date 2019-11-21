@@ -1,11 +1,16 @@
 import React from 'react';
+import Operator from './Operator'
+import './calculator.css'
 
 class Operators extends React.Component{
     render(){
         return(
-            <h1>
-                Operators
-            </h1>
+            <div className="operators">
+                <Operator value="+" onClick={this.props.onClick} />
+                <Operator value="x" onClick={this.props.onClick} />
+                <Operator value="-" onClick={this.props.onClick} />
+                <Operator value="/" onClick={this.props.onClick} />
+            </div>
         )
     }
 }

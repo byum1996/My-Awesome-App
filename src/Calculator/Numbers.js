@@ -1,12 +1,13 @@
 import React from 'react';
 import Number from './Number'
+import './calculator.css'
 
 class Numbers extends React.Component {
     renderNumber(i){
         return(
-            <Number 
+            <Number className="number"
                 value={i}
-                onClick={(e) => console.log(e)}
+                onClick={this.props.onClick}
             />
         )
     }

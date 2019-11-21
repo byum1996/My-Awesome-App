@@ -2,9 +2,10 @@ import React from 'react';
 
 class Display extends React.Component {
     render() {
+
         return(
             <h1>
-                Display
+                {this.props.calculation}
             </h1>
         )
         

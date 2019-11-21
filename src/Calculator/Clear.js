@@ -1,11 +1,12 @@
 import React from 'react';
+import './calculator.css'
 
 class Clear extends React.Component{
     render(){
         return(
-            <h1>
-                Clear
-            </h1>
+            <button className="number" onClick={this.props.onClick}>
+                C
+            </button>
         )
     }
 }

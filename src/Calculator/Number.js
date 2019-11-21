@@ -1,4 +1,5 @@
 import React from 'react'
+import './calculator.css'
 
 class Number extends React.Component{
     render(){
