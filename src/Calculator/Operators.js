@@ -1,18 +1,19 @@
 import React from 'react';
-import Operator from './Operator'
-import './calculator.css'
+import PropTypes from 'prop-types';
+import Operator from './Operator';
+import './calculator.css';
 
-class Operators extends React.Component{
-    render(){
-        return(
-            <div className="operators">
-                <Operator value="+" onClick={this.props.onClick} />
-                <Operator value="x" onClick={this.props.onClick} />
-                <Operator value="-" onClick={this.props.onClick} />
-                <Operator value="/" onClick={this.props.onClick} />
-            </div>
-        )
-    }
-}
+const Operators = ({ onClick }) => (
+  <div className="operators">
+    <Operator value="+" onClick={onClick} />
+    <Operator value="x" onClick={onClick} />
+    <Operator value="-" onClick={onClick} />
+    <Operator value="/" onClick={onClick} />
+  </div>
+);
 
-export default Operators
+Operators.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
+export default Operators;

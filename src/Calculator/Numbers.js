@@ -1,42 +1,33 @@
 import React from 'react';
-import Number from './Number'
-import './calculator.css'
+import PropTypes from 'prop-types';
+import Number from './Number';
+import './calculator.css';
 
-class Numbers extends React.Component {
-    renderNumber(i){
-        return(
-            <Number className="number"
-                value={i}
-                onClick={this.props.onClick}
-            />
-        )
-    }
-    
-    render(){
-        return(
-            <div>
-                <div className="board-row">
-                    {this.renderNumber(7)}
-                    {this.renderNumber(8)}
-                    {this.renderNumber(9)}
-                </div>
-                <div className="board-row">
-                    {this.renderNumber(4)}
-                    {this.renderNumber(5)}
-                    {this.renderNumber(6)}
-                </div>
-                <div className="board-row">
-                    {this.renderNumber(1)}
-                    {this.renderNumber(2)}
-                    {this.renderNumber(3)}
-                </div>
-                <div className="board-row">
-                    {this.renderNumber(0)}
-                </div>
-            </div>
-            
-        )
-    }
-}
+const renderNumber = (i, onClick) => <Number className="number" value={i} onClick={onClick} />;
 
-export default Numbers
+const Numbers = ({ onClick }) => (
+  <div>
+    <div className="board-row">
+      {renderNumber(7, onClick)}
+      {renderNumber(8, onClick)}
+      {renderNumber(9, onClick)}
+    </div>
+    <div className="board-row">
+      {renderNumber(4, onClick)}
+      {renderNumber(5, onClick)}
+      {renderNumber(6, onClick)}
+    </div>
+    <div className="board-row">
+      {renderNumber(1, onClick)}
+      {renderNumber(2, onClick)}
+      {renderNumber(3, onClick)}
+    </div>
+    <div className="board-row">{renderNumber(0, onClick)}</div>
+  </div>
+);
+
+Numbers.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
+export default Numbers;

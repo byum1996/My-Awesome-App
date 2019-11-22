@@ -1,14 +1,16 @@
 import React from 'react';
-import './calculator.css'
+import PropTypes from 'prop-types';
+import './calculator.css';
 
-class Calculate extends React.Component{
-    render(){
-        return(
-            <button className="number" onClick={() => this.props.onClick('=')}>
-                =
-            </button>
-        )
-    }
-}
+const Calculate = ({ onClick }) => (
+  // eslint-disable-next-line react/button-has-type
+  <button className="number" onClick={() => onClick('=')}>
+    =
+  </button>
+);
 
-export default Calculate
+Calculate.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
+export default Calculate;

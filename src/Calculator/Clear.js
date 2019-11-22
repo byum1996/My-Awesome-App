@@ -1,14 +1,16 @@
 import React from 'react';
-import './calculator.css'
+import PropTypes from 'prop-types';
+import './calculator.css';
 
-class Clear extends React.Component{
-    render(){
-        return(
-            <button className="number" onClick={this.props.onClick}>
-                C
-            </button>
-        )
-    }
-}
+const Clear = ({ onClick }) => (
+  // eslint-disable-next-line react/button-has-type
+  <button className="number" onClick={onClick}>
+    C
+  </button>
+);
 
-export default Clear
+Clear.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
+export default Clear;

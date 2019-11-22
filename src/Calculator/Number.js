@@ -1,14 +1,17 @@
-import React from 'react'
-import './calculator.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './calculator.css';
 
-class Number extends React.Component{
-    render(){
-        return(
-            <button className="number" onClick={() => this.props.onClick(this.props.value)}>
-                {this.props.value}
-            </button>
-        )
-    }
-}
+const Number = ({ value, onClick }) => (
+  // eslint-disable-next-line react/button-has-type
+  <button className="number" onClick={() => onClick(value)}>
+    {value}
+  </button>
+);
 
-export default Number
+Number.propTypes = {
+  value: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+export default Number;

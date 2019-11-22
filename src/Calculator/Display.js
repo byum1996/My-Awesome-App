@@ -1,15 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class Display extends React.Component {
-    render() {
+const Display = ({ calculation }) => <h1>{calculation}</h1>;
 
-        return(
-            <h1>
-                {this.props.calculation}
-            </h1>
-        )
-        
-    }
-}
+Display.propTypes = {
+  calculation: PropTypes.string.isRequired
+};
 
-export default Display
+export default Display;
